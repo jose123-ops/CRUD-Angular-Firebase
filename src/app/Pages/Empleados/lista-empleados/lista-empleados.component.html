@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <div class="card text-center">
+        <div class="card-body">
+            <span class="h3">Lista de Empleados</span>
+            <button type="button" class="btn btn-dark float-end"
+                (click)="_router.navigate(['Empleados/agregar'])">Agregar</button>
+            <div class="players " *ngIf="(players$ |async) as players">
+                <table *ngIf="players.length > 0" class="table mt-4">
+                    <thead class="table-dark">
+
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Salario</th>
+                            <th scope="col "></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of players;let i = index ">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{player.nombre}}</td>
+                            <td>{{player.apellido}}</td>
+                            <td>{{player.cedula}}</td>
+                            <td>{{player.salario}}</td>
+                            <td>
+
+                                <button type="button" class="btn btn-primary ms-3"
+                                    (click)="editplayer(player)">Editar</button>
+
+                                <button type="button" class="btn btn-danger ms-5"
+                                    (click)="deletedPlayer(player)">Eliminar</button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
+                <div class="mt-4" *ngIf="players.length === 0">
+                    <h4>sin registro</h4>
+                </div>
+            </div>
+               
+        </div>
+    </div>
+</div>
+
+
+<!-- <ng-template #SinRegistro>
+    <div class="mt-4">
+        <h4>sin registro</h4>
+    </div>
+</ng-template> -->

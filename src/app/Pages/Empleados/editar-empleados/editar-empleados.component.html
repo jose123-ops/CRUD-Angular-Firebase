@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card text-center">
+      <div class="card-body">
+        <h2>Editar Empleados</h2>
+        <form class="mt-4" [formGroup]="form">
+    <div class="row">
+
+      <div class="col">
+        <input type="text" class="form-control form-control-lg" formControlName="nombre" placeholder="Ingrese su nombre" name="Nombre">
+      </div>
+      
+      <div class="col">
+        <input type="text" class="form-control form-control-lg"formControlName="apellido" placeholder="Ingrese su Apellido" name="Apellido">
+      </div>
+    </div>
+      
+        <input type="number" class="form-control form-control-lg mt-4" formControlName="cedula" placeholder="Ingrese cedula" name="cedula">
+    
+      
+        <input type="number" class="form-control form-control-lg mt-4" formControlName="salario" placeholder="Ingrese salario" name="salario">
+     
+        <div class="d-grid gap-2 d-md-block mt-4 ">
+         
+          <button class="btn btn-dark ms-2 " (click)="updateplayer()" type="button">Actualizar</button>
+        </div>
+
+
+  </form>
+    </div>
+  </div>
+</div>
